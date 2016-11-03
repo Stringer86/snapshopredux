@@ -1,0 +1,71 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+hr {
+  height: 1px;
+  background-color: #333;
+}
+
+li:hover {
+  color: blue;
+}
+input[type=text] {
+ border-bottom: 1px solid #2196f3;
+}
+
+input[type=text]:focus:not([readonly]) {
+ border-bottom: 1px solid #2196f3;
+ box-shadow: 0 1px 0 0 white;
+}
+
+
+.matPic {
+  display: block;
+  cursor: -webkit-zoom-in;
+  cursor: zoom-in;
+  position: relative;
+  transition: opacity .4s;
+}
+.matPic.active {
+  cursor: zoom-out;
+}
+.slider .indicators .indicator-item.active {
+ background-color: #2196f3;
+}
+
+.sign {
+  margin-top: 5%;
+}
+
+.right {
+  margin-left: 10%;
+}
+
+.cameras {
+  margin-right: 6%;
+}
+.cameras1 {
+  margin-left: 9%;
+}
+
+
+.rating {
+  margin-top: 25px;
+}
+
+
+.checkout {
+  background-color: #fafafa;
+}
+
+.shipping {
+  border-right: 1px solid;
+
+}
