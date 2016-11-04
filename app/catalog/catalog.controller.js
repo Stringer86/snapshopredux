@@ -8,7 +8,7 @@ class CatalogCtrl {
   }
 
   addToCart(name, price) {
-    this.catalogSvc.addToCart(name, price);
+    return this.catalogSvc.addToCart(name, price);
   }
 }
 

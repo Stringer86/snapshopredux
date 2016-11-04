@@ -14,6 +14,7 @@ class CartCtrl {
   removeFromCart(index) {
     return this.catalogSvc.removeFromCart(index);
   }
+
 }
 
 CartCtrl.$inject = ['CatalogService'];

@@ -67,17 +67,35 @@ class CatalogService {
 
   addToCart(name, price) {
     this.subtotal += price;
+    for (var i = 0; i < this.cart.length; i++) {
+      if (name === this.cart[i].name) {
+        return this.cart[i].quantity += 1;
+      }
+    }
     this.cart.push({
       name: name,
-      price: price
+      price: price,
+      quantity: 1
     })
-     Materialize.toast(`Added ${name}!`, 4000, 'blue rounded')
+
+    Materialize.toast(`Added ${name}!`, 4000, 'blue rounded');
   }
 
   removeFromCart(index) {
-    this.subtotal -= this.cart[index].price;
+    for (var i = 0; i < this.cart[index].quantity; i++) {
+      this.subtotal -= this.cart[index].price;
+    }
     this.cart.splice(index, 1);
   }
+
+  cartCount() {
+    let total = 0;
+    for (var i = 0; i < this.cart.length; i++) {
+      total += this.cart[i].quantity;
+    }
+    return total;
+  }
+
 };
 
 export default CatalogService;

@@ -4,7 +4,7 @@ class CartCountCtrl {
   }
 
   cartCount() {
-    return this.catalogSvc.cart.length;
+    return this.catalogSvc.cartCount();
   }
 }
 
