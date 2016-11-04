@@ -13,9 +13,6 @@ hr {
   background-color: #333;
 }
 
-li:hover {
-  color: blue;
-}
 input[type=text] {
  border-bottom: 1px solid #2196f3;
 }
@@ -50,16 +47,16 @@ input[type=text]:focus:not([readonly]) {
 
 .cameras {
   margin-right: 6%;
+  max-height: 380px;
+  min-height: 380px;
 }
 .cameras1 {
   margin-left: 9%;
 }
 
-
-.rating {
-  margin-top: 25px;
+.addButton {
+  margin-top: 20px;
 }
-
 
 .checkout {
   background-color: #fafafa;

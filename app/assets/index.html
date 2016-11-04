@@ -14,19 +14,19 @@
   <body>
 
   <nav>
-    <div class="nav-wrapper white blue-text">
+    <div class="nav-wrapper white blue-text" ng-controller="CartCountCtrl as count">
       <a href="index.html" class="brand-logo blue-text">Snap Shop</a>
       <a href="#" class="button-collapse" data-activates="nav-mobile" data-sidenav="left" data-menuwidth="250" closeonclick="false">
         <i class="material-icons blue-text">menu</i></a>
                <ul class="right hide-on-med-and-down">
                  <li><a href="signUp.html" class="blue-text">Sign-Up</a></li>
                  <li><a href="index.html" class="blue-text">Sign-In</a></li>
-                 <a class="btn blue" href="#demoModal" modal>My Cart</a>
+                 <a class="btn blue" href="#demoModal" modal>My Cart ({{ count.cartCount() }})</a>
                </ul>
                <ul class="side-nav" id="nav-mobile">
                  <li><a href="signUp.html" class="blue-text">Sign-Up</a></li>
                  <li><a href="index.html" class="blue-text">Sign-In</a></li>
-                 <a class="btn blue" href="#demoModal" modal>My Cart</a>
+                 <a class="btn blue" href="#demoModal" modal>My Cart ({{ count.cartCount() }})</a>
                </ul>
             </div>
          </nav>
@@ -70,27 +70,25 @@
     </div>
   </div>
     <div class="row cameras1" ng-controller="CatalogCtrl as catalog">
-      <div class="col s12 m3 l3 cameras card" ng-repeat="camera in catalog.cameras | filter : searchText" height="250px">
-        <img materialboxed class="matPic" data-caption="{{camera.name}}" width="250" height="250px"ng-src="{{camera.image}}">
+      <div class="col s12 m3 l3 cameras card hoverable" ng-repeat="camera in catalog.cameras() | filter : searchText" height="250px">
+        <img materialboxed class="matPic" data-caption="{{camera.name}}" width="250" height="210px"ng-src="{{camera.image}}">
         <div class="row">
           <div class="col s12">
-            <div class="col s6 left-align fontsize">
+            <div class="col s8 left-align fontsize">
               <ul>
                 <li>{{camera.name}}</li>
                 <li>{{ camera.price | currency}}</li>
-                <li ng-show={{camera.onSale}} class="red-text">On Sale!</li>
               </ul>
           </div>
-          <div class="col s6 right-align rating">
-            <a class="btn-floating btn-small waves-effect waves-light red center-align">{{camera.rating}}/5</a>
+          <div class="col s4 right-align sale">
+            <a class="btn-floating btn-medium waves-effect waves-light red darken-3 center-align" ng-show={{camera.onSale}}>Sale!</a>
           </div>
           </div>
-          <div class="row center-align"><a class="waves-effect waves-light blue btn"  ng-click="catalog.addToCart(camera.name, camera.price)">Add to cart</a>
+          <div class="row center-align addButton"><a class="waves-effect waves-light light-green darken-1 btn"  ng-click="catalog.addToCart(camera.name, camera.price)">Add to cart</a>
           </div>
-        </div>
       </div>
 
-      <div id="demoModal" class="modal">
+      <div id="demoModal" class="modal" ng-controller="CartCtrl as cart">
         <div class="modal-content">
           <h4>Your Cart</h4>
           <table class="striped">
@@ -102,25 +100,26 @@
               </tr>
             </thead>
             <tbody>
-              <tr ng-repeat="camera in catalog.cart">
-                <td>{{ camera.name }}</td>
+              <tr ng-repeat="item in cart.cart()">
+                <td>{{ item.name }}</td>
                 <td></td>
-                <td class="center-align">{{ camera.price | currency }}</td>
+                <td class="center-align">{{ item.price | currency }}</td>
+                <td><a href="#" class="red-text" ng-click="cart.removeFromCart($index)"><i class="material-icons">remove_shopping_cart</i></a></td>
               </tr>
               <tr>
                 <td><strong>Subtotal:</td>
                 <td></td>
-                <td class="center-align"><strong>{{ catalog.subtotal | currency }}</td>
+                <td class="center-align"><strong>{{ cart.subtotal() | currency }}</td>
               </tr>
               <tr>
                 <td><strong>Tax:</td>
                 <td></td>
-                <td class="center-align"><strong>{{ catalog.subtotal * .10 | currency }}</td>
+                <td class="center-align"><strong>{{ cart.subtotal() * .10 | currency }}</td>
               </tr>
               <tr>
                 <td><strong>Total</td>
                 <td></td>
-                <td class="center-align"><strong>{{ catalog.subtotal + (catalog.subtotal * .10) | currency }}</td>
+                <td class="center-align"><strong>{{ cart.subtotal() + (cart.subtotal() * .10) | currency }}</td>
               </tr>
 
             </tbody>
