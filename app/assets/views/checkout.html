@@ -1,0 +1,86 @@
+<main>
+  <div class="row">
+  <div class="col l6 offset-l1 shipping">
+    <div class="row">
+        <h2>Snap Shop</h2>
+        <br>
+        <hr>
+        <br>
+        <h6>Shipping Information</h6>
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="first_name" type="text" class="validate">
+            <label for="first_name">First Name</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="last_name" type="text" class="validate">
+            <label for="last_name">Last Name</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="address" type="text" class="validate">
+            <label for="disabled">Address</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="city" type="text" class="validate">
+            <label for="city">City</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="state" type="text" class="validate">
+            <label for="state">State</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="zip" type="text" class="validate">
+            <label for="zip">Zip</label>
+          </div>
+        </div>
+        <div class="row right-align">
+          <a class="waves-effect waves-light btn blue">Purchase</a>
+      </form>
+    </div>
+    </div>
+  </div>
+  <div class="col l5 checkout" ng-controller="CartCtrl as cart">
+    <h4>Your Cart</h4>
+    <table>
+      <thead>
+        <tr>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th class="center-align">Item Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="item in cart.cart()">
+          <td>{{ item.name }}</td>
+          <td>{{ item.quantity }}</td>
+          <td class="center-align">{{ item.price | currency }}</td>
+          <td><a ui-sref="checkout" class="red-text" ng-click="cart.removeFromCart($index)"><i class="material-icons">remove_shopping_cart</i></a></td>
+        </tr>
+        <tr>
+          <td><strong>Subtotal:</td>
+          <td></td>
+          <td class="center-align"><strong>{{ cart.subtotal() | currency }}</td>
+        </tr>
+        <tr>
+          <td><strong>Tax:</td>
+          <td></td>
+          <td class="center-align"><strong>{{ cart.subtotal() * .10 | currency }}</td>
+        </tr>
+        <tr>
+          <td><strong>Total</td>
+          <td></td>
+          <td class="center-align"><strong>{{ cart.subtotal() + (cart.subtotal() * .10) | currency }}</td>
+        </tr>
+
+      </tbody>
+    </table>
+</div>
+</div>
+</main>

@@ -22,6 +22,9 @@ input[type=text]:focus:not([readonly]) {
  box-shadow: 0 1px 0 0 white;
 }
 
+.logo {
+  font-size: 30px;
+}
 
 .matPic {
   display: block;
