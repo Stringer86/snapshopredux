@@ -19,6 +19,14 @@ class CartCtrl {
     return this.cartSvc.removeFromCart(index);
   }
 
+  increaseQuantity(index) {
+    return this.cartSvc.increaseQuantity(index);
+  }
+
+  decreaseQuantity(index) {
+    return this.cartSvc.decreaseQuantity(index);
+  }
+
 }
 
 CartCtrl.$inject = ['CartService'];

@@ -25,14 +25,16 @@
              <thead>
                <tr>
                    <th>Name</th>
-                   <th>Quantity</th>
+                   <th class="quantity">Quantity</th>
                    <th class="center-align">Item Price</th>
                </tr>
              </thead>
              <tbody>
                <tr ng-repeat="item in cart.cart()">
                  <td>{{ item.name }}</td>
-                 <td>{{ item.quantity }}</td>
+                 <td><a href="#" ng-click="cart.decreaseQuantity($index)"><i class="material-icons red-text minus">remove</i>
+                   <span class="blacktext">{{ item.quantity }}</span>
+                   <a href="#" class="green-text" ng-click="cart.increaseQuantity($index)"><i class="material-icons">add</i></td>
                  <td class="center-align">{{ item.price | currency }}</td>
                  <td><a href="#" class="red-text" ng-click="cart.removeFromCart($index)"><i class="material-icons">remove_shopping_cart</i></a></td>
                </tr>

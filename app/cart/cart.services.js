@@ -35,6 +35,18 @@ class CartService {
     return total;
   }
 
+  increaseQuantity(index) {
+    this.cart[index].quantity += 1;
+    this.subtotal += this.cart[index].price;
+  }
+
+  decreaseQuantity(index) {
+    if (this.cart[index].quantity > 0) {
+      this.cart[index].quantity -= 1;
+      this.subtotal -= this.cart[index].price;
+    }
+  }
+
 };
 
 export default CartService;
