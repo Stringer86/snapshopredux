@@ -1,13 +1,13 @@
 class CartCountCtrl {
-  constructor(catalogSvc) {
-    this.catalogSvc = catalogSvc;
+  constructor(cartSvc) {
+    this.cartSvc = cartSvc;
   }
 
   cartCount() {
-    return this.catalogSvc.cartCount();
+    return this.cartSvc.cartCount();
   }
 }
 
-CartCountCtrl.$inject = ['CatalogService'];
+CartCountCtrl.$inject = ['CartService'];
 
 export default CartCountCtrl;

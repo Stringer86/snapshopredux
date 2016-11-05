@@ -7,9 +7,6 @@ class CatalogCtrl {
     return this.catalogSvc.cameras;
   }
 
-  addToCart(name, price) {
-    return this.catalogSvc.addToCart(name, price);
-  }
 }
 
 CatalogCtrl.$inject = ['CatalogService'];
