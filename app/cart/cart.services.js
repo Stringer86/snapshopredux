@@ -35,6 +35,6 @@ class CartService {
     return total;
   }
 
-}
+};
 
 export default CartService;

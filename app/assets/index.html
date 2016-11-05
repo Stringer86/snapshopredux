@@ -84,7 +84,7 @@
             <a class="btn-floating btn-medium waves-effect waves-light red darken-3 center-align" ng-show={{camera.onSale}}>Sale!</a>
           </div>
           </div>
-          <div class="row center-align addButton"><a class="waves-effect waves-light light-green darken-1 btn"  ng-click="catalog.addToCart(camera.name, camera.price)">Add to cart</a>
+          <div class="row center-align addButton"><a class="waves-effect waves-light light-green darken-1 btn"  ng-controller="CartCtrl as cart" ng-click="cart.addToCart(camera.name, camera.price)">Add to cart</a>
           </div>
       </div>
 
@@ -152,9 +152,6 @@
            </div>
          </div>
        </footer>
-  <section>
-
-
   <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
   <script src="/vendor.js"></script>
