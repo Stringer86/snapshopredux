@@ -4,18 +4,22 @@ import uiRouter from 'angular-ui-router'
 
 import CatalogCtrl from './catalog/catalog.controller';
 import CartCtrl from './cart/cart.controller';
-import CartCountCtrl from './nav/cart_count.controller.js';
+import CartCountCtrl from './nav/cart_count.controller';
+import OrdersCtrl from './orders/orders.controller';
 
 import CatalogService from './catalog/catalog.services';
 import CartService from './cart/cart.services';
+import OrdersService from './orders/orders.services';
 
 
 angular.module('my-app', [angularMaterialize, uiRouter])
   .service('CatalogService', CatalogService)
   .service('CartService', CartService)
+  .service('OrdersService', OrdersService)
   .controller('CatalogCtrl', CatalogCtrl)
   .controller('CartCtrl', CartCtrl)
   .controller('CartCountCtrl', CartCountCtrl)
+  .controller('OrdersCtrl', OrdersCtrl)
   .config(['$stateProvider', ($stateProvider) => {
     $stateProvider
       .state('home', {
