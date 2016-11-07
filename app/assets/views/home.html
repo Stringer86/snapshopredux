@@ -32,13 +32,19 @@
   </div>
   <hr>
   <div class="row">
-  <div class="col s3">
+  <div class="col s6">
   <label>Search:</label>
-    <input type="text" ng-model="searchText">
+    <input type="text" ng-model="search">
   </div>
+  <div class="input-field col s6 ">
+          <select material-select ng-model="sortOrder">
+            <option value="" disabled selected>Sort By...</option>
+            <option ng-repeat="value in [ { label:'Name', value: 'name' }, { label: 'Price', value: 'price' }, { label: 'Rating', value: 'rating' }, { label: 'On Sale', value: 'onSale' } ]" value="{{value.value}}">{{value.label}}</option>
+          </select>
+    </div>
   </div>
   <div class="row cameras1" ng-controller="CatalogCtrl as catalog">
-    <div class="col s12 m3 l3 cameras card hoverable" ng-repeat="camera in catalog.cameras() | filter : searchText" height="250px">
+    <div class="col s12 m3 l3 cameras card hoverable" ng-repeat="camera in catalog.cameras() | filter : search | orderBy: sortOrder : reverse = true" height="250px">
       <img materialboxed class="matPic" data-caption="{{camera.name}}" width="250" height="210px"ng-src="{{camera.image}}">
       <div class="row">
         <div class="col s12">
