@@ -41,9 +41,12 @@ class CartService {
   }
 
   decreaseQuantity(index) {
-    if (this.cart[index].quantity > 0) {
+    if (this.cart[index].quantity > 1) {
       this.cart[index].quantity -= 1;
       this.subtotal -= this.cart[index].price;
+    }
+    else {
+      this.removeFromCart(index);
     }
   }
 
