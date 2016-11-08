@@ -44,8 +44,8 @@
     </div>
   </div>
   <div class="row cameras1" ng-controller="CatalogCtrl as catalog">
-    <div class="col s12 m3 l3 cameras card hoverable" ng-repeat="camera in catalog.cameras() | filter : search | orderBy: sortOrder : reverse = true" height="250px">
-      <img materialboxed class="matPic" data-caption="{{camera.name}}" width="250" height="210px"ng-src="{{camera.image}}">
+    <div class="col s12 m3 l3 cameras card hoverable" ng-repeat="camera in catalog.cameras | filter : search | orderBy: sortOrder : reverse = true" height="250px">
+      <img materialboxed class="matPic" data-caption="{{ camera.name }}" width="250" height="210px"ng-src="{{ camera.image }}">
       <div class="row">
         <div class="col s12">
           <div class="col s8 left-align fontsize">

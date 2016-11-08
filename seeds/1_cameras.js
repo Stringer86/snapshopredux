@@ -18,7 +18,7 @@ exports.seed = function(knex) {
         name: 'Canon EOS 70D',
         image: 'http://ecx.images-amazon.com/images/I/81U00AkAUWL._SX522_.jpg',
         rating: 2,
-        price: 1099.0,
+        price: 1099.80,
         on_sale: false
       },
       {
@@ -28,6 +28,54 @@ exports.seed = function(knex) {
         rating: 3,
         price: 3796.95,
         on_sale: true
+      },
+      {
+        id: 4,
+        name: 'Canon EOS M10',
+        image:'http://www.adorama.com/images/Large/icam10k.jpg',
+        rating: 3,
+        price: 499.00,
+        on_sale: true
+      },
+      {
+        id: 5,
+        name: 'Leica M6',
+        image:'https://d1jqecz1iy566e.cloudfront.net/large/bf038.jpg',
+        rating: 5,
+        price: 7299.95,
+        on_sale: false
+      },
+      {
+        id: 6,
+        name: 'Nikon D7200',
+        image:'http://cdn.mos.cms.futurecdn.net/ef9f6ec0a94a4ddaa501e73edcb46da8-650-80.jpg',
+        rating: 3,
+        price: 831.95,
+        on_sale: false
+      },
+      {
+        id: 7,
+        name: 'Panasonic LX100',
+        image:'http://cdn.mos.cms.futurecdn.net/51b3bea2fd56f3b5fe281cf1d2f4965c-650-80.jpg',
+        rating: 4,
+        price: 500.00,
+        on_sale: true
+      },
+      {
+        id: 8,
+        name: 'Fujifilm X-A2',
+        image:'http://www.adorama.com/images/Large/ifjxa2sl.jpg',
+        rating: 3,
+        price: 549.00,
+        on_sale: false
+      },
+      {
+        id: 9,
+        name: 'Canon EOS-5D',
+        image:'http://www.adorama.com/images/Large/ica5dm4k.jpg',
+        rating: 5,
+        price: 2489.00,
+        on_sale: false
       }]);
     })
     .then(() => {
