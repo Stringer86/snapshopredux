@@ -44,9 +44,6 @@ input[type=text]:focus:not([readonly]) {
   cursor: zoom-out;
 }
 
-/*.minus {
-  padding-bottom: 5px;
-}*/
 .slider .indicators .indicator-item.active {
  background-color: #2196f3;
 }
@@ -82,5 +79,8 @@ input[type=text]:focus:not([readonly]) {
 
 .shipping {
   border-right: 1px solid;
+}
 
+.sale {
+  margin-top: 20px;
 }

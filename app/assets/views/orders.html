@@ -1,24 +1,23 @@
+<main>
   <div class="container" ng-controller="OrdersCtrl as ordersCtrl">
     <div class="row">
-  <ul class="collection with-header">
-      <li class="collection-header"><h4>Your Past Orders</h4></li>
-      <li class="collection-item" ng-repeat="order in ordersCtrl.orders()">
-        <table>
-          <thead>
+        <table class="striped">
             <thead>
               <tr class="center-align">
                   <th>Name</th>
                   <th>Price</th>
                   <th>Quantity</th>
+                  <th>Total</th>
                   <th>Order Date</th>
               </tr>
             </thead>
           <tbody>
-            <tr>
+            <tr ng-repeat="order in ordersCtrl.orders()">
             <td>{{ order.name }}</td>
-            <td>{{ order.price }}</td>
+            <td>{{ order.price | currency }}</td>
             <td>{{ order.quantity }}</td>
-            <td>{{ order.created_at | date }}</td>
+            <td>{{ order.quantity * order.price | currency }}</td>
+            <td>{{ order.created_at | date}}</td>
           </tr>
           </tbody>
         </table>
@@ -26,3 +25,5 @@
     </ul>
 </div>
 </div>
+
+</main>
