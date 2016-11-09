@@ -1,5 +1,5 @@
 <main>
-  <div class="container">
+  <div class="container" ng-controller="SignUpCtrl as sign">
     <div class="row center-align">
       <h1>Sign-up!</h1>
       <div class="col s10 offset-s1">
@@ -10,28 +10,28 @@
   <form class="col s10 offset-s1">
     <div class="row">
       <div class="input-field col s6">
-        <input id="first_name" type="text" class="validate">
+        <input id="first_name" type="text" class="validate" ng-model="sign.first">
         <label for="first_name">First Name</label>
       </div>
       <div class="input-field col s6">
-        <input id="last_name" type="text" class="validate">
+        <input id="last_name" type="text" class="validate" ng-model="sign.last">
         <label for="last_name">Last Name</label>
       </div>
     </div>
     <div class="row">
       <div class="input-field col s12">
-        <input id="password" type="password" class="validate">
-        <label for="password">Password</label>
+        <input id="email" type="email" class="validate" ng-model="sign.email">
+        <label for="email">Email</label>
       </div>
     </div>
     <div class="row">
       <div class="input-field col s12">
-        <input id="email" type="email" class="validate">
-        <label for="email">Email</label>
+        <input id="password" type="password" class="validate" ng-model="sign.password">
+        <label for="password">Password</label>
       </div>
     </div>
     <div class="row center-align">
-      <a class="waves-effect waves-light btn blue">Sign Up!</a>
+      <a class="waves-effect waves-light btn blue" ng-click="sign.signUp(sign.first, sign.last, sign.email, sign.password)">Sign Up!</a>
   </form>
 </div>
 
