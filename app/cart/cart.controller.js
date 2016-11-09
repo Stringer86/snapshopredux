@@ -12,19 +12,19 @@ class CartCtrl {
   }
 
   addToCart(name, price) {
-    return this.cartSvc.addToCart(name, price);
+    this.cartSvc.addToCart(name, price);
   }
 
   removeFromCart(index) {
-    return this.cartSvc.removeFromCart(index);
+    this.cartSvc.removeFromCart(index);
   }
 
   increaseQuantity(index) {
-    return this.cartSvc.increaseQuantity(index);
+    this.cartSvc.increaseQuantity(index);
   }
 
   decreaseQuantity(index) {
-    return this.cartSvc.decreaseQuantity(index);
+    this.cartSvc.decreaseQuantity(index);
   }
 
 }
