@@ -3,14 +3,25 @@ class SignInCtrl {
     this.signinSvc = signinSvc;
     this.email = '';
     this.password = '';
-    this.sign = false;
+  }
+
+  getState() {
+    return this.signinSvc.getState()
   }
 
   signIn(email, password) {
     this.signinSvc.signIn(email, password);
     this.email = '';
     this.password = '';
-    this.sign = true;
+    console.log(this.sign);
+  }
+
+  signOut() {
+    this.signinSvc.signOut();
+  }
+
+  changeView() {
+    this.sign = !this.sign;
   }
 
 }

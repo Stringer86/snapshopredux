@@ -32,7 +32,7 @@ exports.seed = function(knex) {
       {
         id: 4,
         name: 'Canon EOS M10',
-        image:'http://www.adorama.com/images/Large/icam10k.jpg',
+        image:'http://www.shutterbug.com/images/524_canon_m10_slant.jpg',
         rating: 3,
         price: 499.00,
         on_sale: true
@@ -64,7 +64,7 @@ exports.seed = function(knex) {
       {
         id: 8,
         name: 'Fujifilm X-A2',
-        image:'http://www.adorama.com/images/Large/ifjxa2sl.jpg',
+        image:'https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/13/2015/04/Fujifilm-X-A2-product-shot-13.jpg',
         rating: 3,
         price: 549.00,
         on_sale: false
@@ -72,7 +72,7 @@ exports.seed = function(knex) {
       {
         id: 9,
         name: 'Canon EOS-5D',
-        image:'http://www.adorama.com/images/Large/ica5dm4k.jpg',
+        image:'https://images-na.ssl-images-amazon.com/images/I/51CP7RH10ZL.jpg',
         rating: 5,
         price: 2489.00,
         on_sale: false
