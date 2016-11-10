@@ -5,19 +5,24 @@
             <thead>
               <tr class="center-align">
                   <th>Name</th>
+                  <th>pic</th>
                   <th>Price</th>
                   <th>Quantity</th>
                   <th>Total</th>
                   <th>Order Date</th>
               </tr>
             </thead>
-          <tbody>
-            <tr ng-repeat="order in ordersCtrl.orders()">
-            <td>{{ order.name }}</td>
-            <td>{{ order.price | currency }}</td>
-            <td>{{ order.quantity }}</td>
-            <td>{{ order.quantity * order.price | currency }}</td>
-            <td>{{ order.created_at | date}}</td>
+          <tbody ng-repeat="order in ordersCtrl.orders">
+
+            <tr ng-repeat="item in order.data.items">
+              <td>{{ item.name }}</td>
+              <td><img ng-src={{item.image}} height="100px"></td>
+              <td>{{ item.price | currency }}</td>
+              <td>{{ item.quantity }}</td>
+              <td>{{ item.price * item.quantity | currency}}</td>
+              <td>{{ item.created_at | date}}</td>
+             </tr>
+
           </tr>
           </tbody>
         </table>
