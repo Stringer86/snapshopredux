@@ -11,8 +11,8 @@ class CartCtrl {
     return this.cartSvc.subtotal;
   }
 
-  addToCart(name, price) {
-    this.cartSvc.addToCart(name, price);
+  addToCart(name, price, cameraId) {
+    this.cartSvc.addToCart(name, price, cameraId);
   }
 
   removeFromCart(index) {

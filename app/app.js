@@ -8,12 +8,14 @@ import CartCountCtrl from './nav/cart_count.controller';
 import OrdersCtrl from './orders/orders.controller';
 import SignUpCtrl from './signup/signup.controller';
 import SignInCtrl from './signup/signin.controller';
+import CheckoutCtrl from './checkout/checkout.controller';
 
 import CatalogService from './catalog/catalog.services';
 import CartService from './cart/cart.services';
 import OrdersService from './orders/orders.services';
 import SignUpService from './signup/signup.services';
 import SignInService from './signup/signin.services';
+import CheckoutService from './checkout/checkout.services';
 
 
 angular.module('my-app', [angularMaterialize, uiRouter])
@@ -22,12 +24,14 @@ angular.module('my-app', [angularMaterialize, uiRouter])
   .service('OrdersService', OrdersService)
   .service('SignUpService', SignUpService)
   .service('SignInService', SignInService)
+  .service('CheckoutService', CheckoutService)
   .controller('CatalogCtrl', CatalogCtrl)
   .controller('CartCtrl', CartCtrl)
   .controller('CartCountCtrl', CartCountCtrl)
   .controller('OrdersCtrl', OrdersCtrl)
   .controller('SignUpCtrl', SignUpCtrl)
   .controller('SignInCtrl', SignInCtrl)
+  .controller('CheckoutCtrl', CheckoutCtrl)
   .config(['$stateProvider', ($stateProvider) => {
     $stateProvider
       .state('home', {

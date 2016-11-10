@@ -4,7 +4,7 @@ class CartService {
     this.subtotal = 0;
   }
 
-  addToCart(name, price) {
+  addToCart(name, price, cameraId) {
     this.subtotal += parseInt(price);
     Materialize.toast(`Added ${name}!`, 4000, 'blue rounded');
 
@@ -14,6 +14,7 @@ class CartService {
       }
     }
     this.cart.push({
+      cameraId: cameraId,
       name: name,
       price: parseInt(price),
       quantity: 1

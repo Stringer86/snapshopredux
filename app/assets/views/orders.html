@@ -16,11 +16,11 @@
 
             <tr ng-repeat="item in order.data.items">
               <td>{{ item.name }}</td>
-              <td><img ng-src={{item.image}} height="100px"></td>
+              <td><img ng-src={{item.image}} height="100px" width="100px"></td>
               <td>{{ item.price | currency }}</td>
               <td>{{ item.quantity }}</td>
-              <td>{{ item.price * item.quantity | currency}}</td>
-              <td>{{ item.created_at | date}}</td>
+              <td>{{ item.price * item.quantity + ((item.price * item.quantity) * .1)| currency}}</td>
+              <td>{{ order.data.createdAt | date }}</td>
              </tr>
 
           </tr>

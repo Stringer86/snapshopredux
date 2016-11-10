@@ -59,7 +59,7 @@
           <a class="btn-floating btn-medium waves-effect waves-light red darken-3 center-align" ng-show={{camera.onSale}}>Sale!</a>
         </div>
         </div>
-        <div class="row center-align addButton"><a class="waves-effect waves-light light-green darken-1 btn"  ng-controller="CartCtrl as cart" ng-click="cart.addToCart(camera.name, camera.price)">Add to cart</a>
+        <div class="row center-align addButton"><a class="waves-effect waves-light light-green darken-1 btn"  ng-controller="CartCtrl as cart" ng-click="cart.addToCart(camera.name, camera.price, camera.id)">Add to cart</a>
         </div>
     </div>
   </div>

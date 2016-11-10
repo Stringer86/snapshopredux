@@ -1,5 +1,5 @@
 <main>
-  <div class="row">
+  <div class="row" ng-controller="CartCtrl as cart">
   <div class="col l6 offset-l1 shipping">
     <div class="row">
         <h2>Snap Shop</h2>
@@ -7,41 +7,47 @@
         <hr>
         <br>
         <h6>Shipping Information</h6>
-      <form class="col s12">
+      <form class="col s12" ng-controller="CheckoutCtrl as order">
         <div class="row">
           <div class="input-field col s6">
-            <input id="first_name" type="text" class="validate">
+            <input id="first_name" type="text" class="validate" ng-model="order.first">
             <label for="first_name">First Name</label>
           </div>
           <div class="input-field col s6">
-            <input id="last_name" type="text" class="validate">
+            <input id="last_name" type="text" class="validate" ng-model="order.last">
             <label for="last_name">Last Name</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <input id="address" type="text" class="validate">
-            <label for="disabled">Address</label>
+            <input id="address1" type="text" class="validate" ng-model="order.address1">
+            <label for="address1">Address</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <input id="city" type="text" class="validate">
+            <input id="address2" type="text" class="validate" ng-model="order.address2">
+            <label for="address2">Address 2</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="city" type="text" class="validate" ng-model="order.city">
             <label for="city">City</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s6">
-            <input id="state" type="text" class="validate">
+            <input id="state" type="text" class="validate" ng-model="order.state">
             <label for="state">State</label>
           </div>
           <div class="input-field col s6">
-            <input id="zip" type="text" class="validate">
+            <input id="zip" type="text" class="validate" ng-model="order.zip">
             <label for="zip">Zip</label>
           </div>
         </div>
         <div class="row right-align">
-          <a class="waves-effect waves-light btn blue">Purchase</a>
+          <a class="waves-effect waves-light btn blue" ng-click="order.purchase(cart.cart())">Purchase</a>
       </form>
     </div>
     </div>
