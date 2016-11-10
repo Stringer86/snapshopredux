@@ -3,13 +3,14 @@ class SignInCtrl {
     this.signinSvc = signinSvc;
     this.email = '';
     this.password = '';
+    this.sign = false;
   }
 
   signIn(email, password) {
-    console.log("hello");
-    return this.signinSvc.signIn(email, password);
+    this.signinSvc.signIn(email, password);
     this.email = '';
     this.password = '';
+    this.sign = true;
   }
 
 }

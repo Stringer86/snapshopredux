@@ -1,7 +1,6 @@
 class SignUpService {
   constructor($http) {
     this.$http = $http;
-
 }
 
   signUp(firstName, lastName, email, password) {
