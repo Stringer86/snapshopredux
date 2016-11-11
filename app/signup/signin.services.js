@@ -1,7 +1,6 @@
 class SignInService {
   constructor($http) {
     this.$http = $http;
-    this.sign = true;
     this.isLoggedIn = false;
     this.$http.get('/api/token')
       .then((response) => {
@@ -24,7 +23,7 @@ class SignInService {
         return response.data;
         })
         .catch((err) => {
-          Materialize.toast('Signed in failed!', 4000, 'red rounded');
+          Materialize.toast(`${err}`, 4000, 'red rounded');
         })
     }
 

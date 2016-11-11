@@ -10,7 +10,7 @@ class SignUpService {
         return response.data;
         })
         .catch((err) => {
-          console.log(err);
+          Materialize.toast(`${err.data}`, 4000, 'red rounded');
         })
     }
 }

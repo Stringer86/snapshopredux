@@ -16,6 +16,13 @@ class CheckoutCtrl {
     .then((e) => {
       this.cartSvc.cart.length = 0;
       this.cartSvc.subtotal = 0;
+      this.first = '';
+      this.last = '';
+      this.address1 = '';
+      this.address2 = '';
+      this.city = '';
+      this.state = '';
+      this.zip = '';
     })
   }
 
