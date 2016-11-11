@@ -12,7 +12,8 @@ class CatalogService {
         console.log(err);
       });
   }
-
 }
+
+CatalogCtrl.$inject = ['$http'];
 
 export default CatalogService;
