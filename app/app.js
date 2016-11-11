@@ -1,14 +1,14 @@
 import angular from 'angular';
 import angularMaterialize from 'angular-materialize';
-import uiRouter from 'angular-ui-router'
+import uiRouter from 'angular-ui-router';
 
-import CatalogCtrl from './catalog/catalog.controller';
-import CartCtrl from './cart/cart.controller';
 import CartCountCtrl from './nav/cart_count.controller';
-import OrdersCtrl from './orders/orders.controller';
-import SignUpCtrl from './signup/signup.controller';
-import SignInCtrl from './signup/signin.controller';
+import CartCtrl from './cart/cart.controller';
+import CatalogCtrl from './catalog/catalog.controller';
 import CheckoutCtrl from './checkout/checkout.controller';
+import OrdersCtrl from './orders/orders.controller';
+import SignInCtrl from './signup/signin.controller';
+import SignUpCtrl from './signup/signup.controller';
 
 import CatalogService from './catalog/catalog.services';
 import CartService from './cart/cart.services';
@@ -16,7 +16,6 @@ import OrdersService from './orders/orders.services';
 import SignUpService from './signup/signup.services';
 import SignInService from './signup/signin.services';
 import CheckoutService from './checkout/checkout.services';
-
 
 angular.module('my-app', [angularMaterialize, uiRouter])
   .service('CatalogService', CatalogService)
@@ -57,5 +56,5 @@ angular.module('my-app', [angularMaterialize, uiRouter])
       .state('orders', {
         url: 'orders',
         templateUrl: 'views/orders.html'
-      })
+      });
   }]);

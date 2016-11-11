@@ -4,23 +4,25 @@ class OrdersService {
     this.$q = $q;
   }
   getOrders() {
-      return this.$http.get('/api/orders')
+    return this.$http.get('/api/orders')
         .then((orders) => {
           return orders.data;
         })
         .then((orders) => {
-          let orderIds = orders.map((order) => order.id);
-          return orderIds
+          const orderIds = orders.map((order) => order.id);
+
+          return orderIds;
         })
-        .then(orderIds => {
-          let orderPromises = orderIds.map(id => this.$http.get(`/api/orders/${id}`));
-          return this.$q.all(orderPromises)
+        .then((orderIds) => {
+          const orderPromises = orderIds.map((id) => this.$http.get(`/api/orders/${id}`));
+
+          return this.$q.all(orderPromises);
         })
-        .then(orderInfo => orderInfo)
+        .then((orderInfo) => orderInfo)
         .catch((err) => {
           console.log(err);
-        })
-    }
+        });
+  }
 }
 
 OrdersService.$inject = ['$http', '$q'];

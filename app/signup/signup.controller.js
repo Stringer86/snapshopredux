@@ -10,7 +10,6 @@ class SignUpCtrl {
   signUp(first, last, email, password) {
     return this.signupSvc.signUp(first, last, email, password);
   }
-
 }
 
 SignUpCtrl.$inject = ['SignUpService'];

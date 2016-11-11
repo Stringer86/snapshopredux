@@ -8,9 +8,11 @@ class CartService {
     this.subtotal += parseInt(price);
     Materialize.toast(`Added ${name}!`, 4000, 'blue rounded');
 
-    for (var i = 0; i < this.cart.length; i++) {
+    for (let i = 0; i < this.cart.length; i++) {
       if (name === this.cart[i].name) {
-        return this.cart[i].quantity += 1;
+        const quant = this.cart[i].quantity += 1;
+
+        return quant;
       }
     }
     this.cart.push({
@@ -18,11 +20,11 @@ class CartService {
       name: name,
       price: parseInt(price),
       quantity: 1
-    })
+    });
   }
 
   removeFromCart(index) {
-    for (var i = 0; i < this.cart[index].quantity; i++) {
+    for (let i = 0; i < this.cart[index].quantity; i++) {
       this.subtotal -= this.cart[index].price;
     }
     this.cart.splice(index, 1);
@@ -30,9 +32,11 @@ class CartService {
 
   cartCount() {
     let total = 0;
-    for (var i = 0; i < this.cart.length; i++) {
+
+    for (let i = 0; i < this.cart.length; i++) {
       total += this.cart[i].quantity;
     }
+
     return total;
   }
 
@@ -51,6 +55,6 @@ class CartService {
     }
   }
 
-};
+}
 
 export default CartService;

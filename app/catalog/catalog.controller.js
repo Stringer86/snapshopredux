@@ -8,7 +8,6 @@ class CatalogCtrl {
     .catch((err) => console.log(err));
   }
 
-
 }
 
 CatalogCtrl.$inject = ['CatalogService'];

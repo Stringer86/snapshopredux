@@ -12,10 +12,8 @@ class CheckoutCtrl {
   }
 
   purchase(items, first, last, address1, address2, city, state, zip) {
-    this.checkoutSvc.purchase(items, this.first, this.last, this.address1, this.address2, this.city, this.state, this.zip)
+    this.checkoutSvc.purchase(items, this.first, this.last, this.address1, this.address2, this.city, this.state, this.zip);
   }
-
-
 
 }
 

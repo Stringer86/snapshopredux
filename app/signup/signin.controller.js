@@ -7,11 +7,11 @@ class SignInCtrl {
   }
 
   getState() {
-    return this.signinSvc.getState()
+    return this.signinSvc.getState();
   }
 
   signIn(email, password) {
-    this.signinSvc.signIn(email, password)
+    this.signinSvc.signIn(email, password);
   }
 
   signOut() {

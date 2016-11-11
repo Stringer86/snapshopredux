@@ -6,11 +6,8 @@ class OrdersCtrl {
       this.orders = orders;
     })
 
-    .catch((err) => {console.log(err)});
+    .catch((err) => { console.log(err); });
   }
-
-
-
 }
 
 OrdersCtrl.$inject = ['OrdersService'];
