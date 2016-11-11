@@ -14,6 +14,6 @@ class CatalogService {
   }
 }
 
-CatalogCtrl.$inject = ['$http'];
+CatalogService.$inject = ['$http'];
 
 export default CatalogService;
