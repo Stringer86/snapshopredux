@@ -7,19 +7,24 @@ body {
  main {
    flex: 1 0 auto;
  }
- 
+
 hr {
   height: 1px;
   background-color: #333;
 }
 
-input[type=text] {
- border-bottom: 1px solid #2196f3;
+input[type=text],
+input[type=email],
+input[type=password] {
+ border: 1px solid black;
 }
 
-input[type=text]:focus:not([readonly]) {
- border-bottom: 1px solid #2196f3;
+input[type=text]:focus:not([readonly]),
+input[type=email]:focus:not([readonly]),
+input[type=password]:focus:not([readonly]) {
+ border-bottom: 1px solid black;
  box-shadow: 0 1px 0 0 white;
+
 }
 .hidden {
   display: none;
@@ -78,6 +83,10 @@ input[type=text]:focus:not([readonly]) {
 
 .checkout {
   background-color: #fafafa;
+}
+
+.dropdown-content li>a, .dropdown-content li>span {
+  color: #2296f3;
 }
 
 .quantity {

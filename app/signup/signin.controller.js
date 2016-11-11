@@ -11,21 +11,13 @@ class SignInCtrl {
   }
 
   signIn(email, password) {
-    this.signinSvc.signIn(email, password);
-    this.email = '';
-    this.password = '';
-    console.log(this.sign);
+    this.signinSvc.signIn(email, password)
   }
 
   signOut() {
     this.signinSvc.signOut();
     this.cartSvc.cart.length = 0;
   }
-
-  changeView() {
-    this.sign = !this.sign;
-  }
-
 }
 
 SignInCtrl.$inject = ['SignInService', 'CartService'];

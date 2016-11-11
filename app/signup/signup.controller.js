@@ -9,10 +9,6 @@ class SignUpCtrl {
 
   signUp(first, last, email, password) {
     return this.signupSvc.signUp(first, last, email, password);
-    this.first = '';
-    this.last = '';
-    this.email = '';
-    this.password = '';
   }
 
 }

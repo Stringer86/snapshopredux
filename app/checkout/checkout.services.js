@@ -10,9 +10,10 @@ purchase(items, first, last, address1, address2, city, state, zip) {
       return response.data;
       })
       .catch((err) => {
-        console.log(err);
+        Materialize.toast(`${err.data}`, 4000, 'red rounded');
       })
   }
 };
+
 
 export default CheckoutService;

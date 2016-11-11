@@ -9,19 +9,19 @@
     <div class="row sign">
       <form class="col s10 offset-s1">
         <div class="row">
-          <div class="input-field col s12">
-            <input id="email" type="email" class="validate" ng-model="signIn.email">
+          <div class="col s12">
             <label for="email">Email</label>
+            <input id="email" type="email" class="validate" ng-model="signIn.email">
           </div>
         </div>
         <div class="row">
-          <div class="input-field col s12">
-            <input id="password" type="password" class="validate" ng-model="signIn.password">
+          <div class="col s12">
             <label for="password">Password</label>
+            <input id="password" type="password" class="validate" ng-model="signIn.password">
           </div>
         </div>
         <div class="row center-align">
-          <a ui-sref="home" class="waves-effect waves-light btn blue" ng-click="signIn.signIn(signIn.email, signIn.password)">Sign In!</a>
+          <a class="waves-effect waves-light btn blue" ng-click="signIn.signIn(signIn.email, signIn.password)">Sign In!</a>
         </div>
       </form>
     </div>

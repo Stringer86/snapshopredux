@@ -1,6 +1,7 @@
 class SignInService {
-  constructor($http) {
+  constructor($http, $state) {
     this.$http = $http;
+    this.$state = $state;
     this.isLoggedIn = false;
     this.$http.get('/api/token')
       .then((response) => {
@@ -20,10 +21,11 @@ class SignInService {
         .then((response) => {
         Materialize.toast('Signed in!', 4000, 'green rounded');
         this.isLoggedIn = true;
+        this.$state.go('home');
         return response.data;
         })
         .catch((err) => {
-          Materialize.toast(`${err}`, 4000, 'red rounded');
+          Materialize.toast(`${err.data}`, 4000, 'red rounded');
         })
     }
 
@@ -39,5 +41,8 @@ class SignInService {
           })
       }
 }
+
+SignInService.$inject = ['$http', '$state'];
+
 
 export default SignInService;
