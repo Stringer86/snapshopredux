@@ -8,7 +8,7 @@ exports.seed = function(knex) {
       return knex('cameras').insert([{
         id: 1,
         name: 'Nikon D3100 DSLR',
-        image: 'https://ecx.images-amazon.com/images/I/713u2gDQqML._SX522_.jpg',
+        image: 'http://ecx.images-amazon.com/images/I/713u2gDQqML._SX522_.jpg',
         rating: 4,
         price: 369.99,
         on_sale: true
