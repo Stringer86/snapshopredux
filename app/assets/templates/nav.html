@@ -22,7 +22,13 @@
 
        <div id="demoModal" class="modal" ng-controller="CartCtrl as cart">
          <div class="modal-content">
+           <div class="row">
+             <div class="col s6">
            <h4>Your Cart</h4>
+         </div>
+         <div class="col s6 right-align modal-close"><a ui-sref="checkout" class="btn blue">Checkout</a>
+         </div>
+         </div>
            <table class="striped">
              <thead>
                <tr>
@@ -60,7 +66,7 @@
            </table>
          </div>
          <div class="modal-footer">
-           <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
-           <a ui-sref="checkout" class=" modal-action modal-close waves-effect waves-green btn-flat">Checkout</a>
+           <a class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+           <a ui-sref="checkout" class="modal-action modal-close waves-effect waves-green btn-flat">Checkout</a>
          </div>
        </div>
