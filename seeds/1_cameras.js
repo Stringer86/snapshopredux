@@ -16,7 +16,7 @@ exports.seed = function(knex) {
       {
         id: 2,
         name: 'Canon EOS 70D',
-        image: 'https://ecx.images-amazon.com/images/I/81U00AkAUWL._SX522_.jpg',
+        image: 'http://ecx.images-amazon.com/images/I/81U00AkAUWL._SX522_.jpg',
         rating: 2,
         price: 1099.80,
         on_sale: false
@@ -24,7 +24,7 @@ exports.seed = function(knex) {
       {
         id: 3,
         name: 'Nikon D810A',
-        image: 'https://ecx.images-amazon.com/images/I/91wtXIfLl2L._SX522_.jpg',
+        image: 'http://ecx.images-amazon.com/images/I/91wtXIfLl2L._SX522_.jpg',
         rating: 3,
         price: 3796.95,
         on_sale: true
@@ -32,7 +32,7 @@ exports.seed = function(knex) {
       {
         id: 4,
         name: 'Canon EOS M10',
-        image:'https://www.shutterbug.com/images/524_canon_m10_slant.jpg',
+        image:'http://www.shutterbug.com/images/524_canon_m10_slant.jpg',
         rating: 3,
         price: 499.00,
         on_sale: true
@@ -48,7 +48,7 @@ exports.seed = function(knex) {
       {
         id: 6,
         name: 'Nikon D7200',
-        image:'https://cdn.mos.cms.futurecdn.net/ef9f6ec0a94a4ddaa501e73edcb46da8-650-80.jpg',
+        image:'http://cdn.mos.cms.futurecdn.net/ef9f6ec0a94a4ddaa501e73edcb46da8-650-80.jpg',
         rating: 3,
         price: 831.95,
         on_sale: false
@@ -56,7 +56,7 @@ exports.seed = function(knex) {
       {
         id: 7,
         name: 'Panasonic LX100',
-        image:'https://cdn.mos.cms.futurecdn.net/51b3bea2fd56f3b5fe281cf1d2f4965c-650-80.jpg',
+        image:'http://cdn.mos.cms.futurecdn.net/51b3bea2fd56f3b5fe281cf1d2f4965c-650-80.jpg',
         rating: 4,
         price: 500.00,
         on_sale: true
