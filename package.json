@@ -53,6 +53,6 @@
     "uglify-js-brunch": "^2.0.1"
   },
   "engines": {
-    "node": "6.7.0"
+    "node": "6.6.0"
   }
 }
