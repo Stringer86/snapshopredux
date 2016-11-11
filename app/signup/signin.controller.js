@@ -1,5 +1,6 @@
 class SignInCtrl {
-  constructor(signinSvc) {
+  constructor(signinSvc, cartSvc) {
+    this.cartSvc = cartSvc;
     this.signinSvc = signinSvc;
     this.email = '';
     this.password = '';
@@ -18,6 +19,7 @@ class SignInCtrl {
 
   signOut() {
     this.signinSvc.signOut();
+    this.cartSvc.cart.length = 0;
   }
 
   changeView() {
@@ -26,6 +28,6 @@ class SignInCtrl {
 
 }
 
-SignInCtrl.$inject = ['SignInService'];
+SignInCtrl.$inject = ['SignInService', 'CartService'];
 
 export default SignInCtrl;
